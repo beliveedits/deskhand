@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Deskhand</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 64 64" aria-hidden="true" class="mark"><rect width="64" height="64" rx="14"/><path d="M19 22l13 10-13 10" class="chev"/><rect x="36" y="40" width="14" height="5" rx="2.5" class="bar"/><circle cx="48" cy="19" r="4" class="dot"/></svg>
+    <span class="name">Deskhand</span><small class="ver">v{{VERSION}}</small>
+  </div>
+  <div class="meta">
+    <span id="mode" class="pill dry" hidden>Dry run: nothing really happens</span>
+    <span id="osname" class="muted"></span>
+  </div>
+</header>
+
+<div id="banner" class="banner" role="alert" hidden></div>
+
+<main>
+  <section class="console" aria-label="Command">
+    <form id="form" autocomplete="off">
+      <label for="cmd" class="sr">Command for your laptop</label>
+      <div class="inputrow">
+        <input id="cmd" type="text" maxlength="400" spellcheck="false" autocapitalize="off" placeholder="Say or type a command" autofocus>
+        <button type="button" id="mic" class="icon" aria-pressed="false" aria-label="Speak a command" title="Speak a command">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2Z"/></svg>
+        </button>
+        <button type="submit" id="send" class="go">Do it</button>
+      </div>
+    </form>
+    <p id="preview" class="preview"></p>
+
+    <div id="ask" class="ask" role="alertdialog" aria-labelledby="askText" hidden>
+      <p id="askText"></p>
+      <div class="askbtns"><button type="button" id="yes" class="go">Yes, do it</button><button type="button" id="no" class="plain">No</button><span class="hint">or press Y / N</span></div>
+      <div class="fuse" aria-hidden="true"><i id="fuse"></i></div>
+    </div>
+
+    <div id="voicenote" class="note" hidden>
+      <p><strong>Before the microphone turns on.</strong> Speech recognition is done by your browser, not by Deskhand. Chrome and Edge usually send the audio to their makers' servers to turn it into text. Deskhand itself sends nothing anywhere. If that is not okay for you, type instead.</p>
+      <div class="askbtns"><button type="button" id="voiceok" class="go">Okay, use the microphone</button><button type="button" id="voiceno" class="plain">I will type</button></div>
+    </div>
+
+    <div class="chips" id="chips" aria-label="Examples"></div>
+  </section>
+
+  <section class="side" aria-label="Timers, notes and shortcuts">
+    <div class="card"><h2>Timers</h2><ul id="timers" class="list"></ul><p id="notimers" class="muted small">None running. Say "set a timer for 10 minutes".</p></div>
+    <div class="card"><h2>Notes <span id="notecount" class="count"></span></h2><ul id="notes" class="list"></ul><p id="nonotes" class="muted small">Say "note: buy HDMI cables".</p></div>
+    <div class="card" id="routcard" hidden><h2>Routines</h2><ul id="routines" class="list"></ul></div>
+    <div class="card"><h2>Settings</h2>
+      <label class="check"><input type="checkbox" id="speak"> Speak the replies</label>
+      <button type="button" id="undo" class="plain wide" hidden>Undo the last Downloads sort</button>
+    </div>
+  </section>
+
+  <section class="ledger" aria-label="What happened">
+    <h2>Ledger <span class="muted small">every command, and exactly what it ran</span></h2>
+    <ol id="log" aria-live="polite"></ol>
+    <p id="empty" class="muted">Nothing yet. Your first command will print here.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Everything stays on this computer. Deskhand runs a fixed list of skills, asks before anything risky, and never deletes files.</p>
+</footer>
+
+<script src="/lib/text.js"></script>
+<script src="/lib/calc.js"></script>
+<script src="/lib/clock.js"></script>
+<script src="/lib/parser.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

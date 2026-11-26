@@ -1,0 +1,13 @@
+{
+  "name": "deskhand",
+  "version": "1.0.0",
+  "description": "Give your laptop a command and it does it. A local, open-source voice and text assistant with a fixed list of safe skills. No cloud, no account, no AI model.",
+  "bin": { "deskhand": "bin/deskhand.js" },
+  "main": "src/engine.js",
+  "engines": { "node": ">=18.15" },
+  "scripts": { "start": "node bin/deskhand.js", "test": "node test/run.js", "doctor": "node bin/deskhand.js doctor" },
+  "license": "MIT",
+  "author": "Bhavesh Vaghela",
+  "keywords": ["assistant", "voice-commands", "automation", "local-first", "productivity", "windows", "macos", "linux"],
+  "files": ["bin", "src", "ui", "LICENSE", "README.md"]
+}
