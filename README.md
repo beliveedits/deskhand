@@ -113,4 +113,5 @@ All tools are free, open source and run on your device: see [the full list](http
 - [Ad Test Planner](https://github.com/beliveedits/ad-test-planner): Plan an ad A/B test: visitors per version, cost and days. Check results with p-values and ranges, and see why peeking misleads.
 - [SaaS Metrics Lab](https://github.com/beliveedits/saas-metrics-lab): Work out MRR, NRR, churn, quick ratio, LTV, CAC payback, runway and burn multiple, with every formula shown. Nothing is saved.
 - [Creative Diversity Lab](https://github.com/beliveedits/creative-diversity-lab): Check how different your ad creatives really are before you spend.
+- [Safe Zone Overlay](https://github.com/beliveedits/safe-zone-overlay): Draws the Reels, TikTok and Shorts safe-zone margins over any video preview.
 - [Deskhand](https://github.com/beliveedits/deskhand): Give your laptop a command and it does it. Voice and text, no cloud, no AI model.
